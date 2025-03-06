@@ -4,6 +4,7 @@ import { config } from '../wagmiConfig'
 import TransfersList from './components/TransfersList'
 import { Account } from './components/Account'
 import { WalletOptions } from './components/WalletOptions'
+import { SendTransaction } from './components/SendTransaction'
 // import { Profile } from './components/Profile'
 
 const queryClient = new QueryClient()
@@ -23,6 +24,7 @@ function App() {
       <div className="min-h-screen bg-gray-100 p-4 text-gray-900">
         <h1 className="text-2xl font-bold mb-4">ERC-20 Transfer Viewer</h1>
         <ConnectWallet />
+        <SendTransaction />
         <TransfersList />
       </div>
       </QueryClientProvider>

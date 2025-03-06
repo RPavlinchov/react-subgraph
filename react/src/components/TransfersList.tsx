@@ -76,6 +76,7 @@ export default function TransfersList() {
         return await request(SUBGRAPH_URL, allQuery, variables);
       }
     },
+    staleTime: 1000 * 60 * 5, // data remains fresh for 5 minutes
   });
 
   return (
@@ -89,7 +90,6 @@ export default function TransfersList() {
           Error occurred querying the Subgraph
         </div>
       )}
-      
       {data && data.transfers.length === 0 && (
         <p className="text-center">No transfers found.</p>
       )}
